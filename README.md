@@ -10,7 +10,7 @@ Two exploratory, clickable research prototypes for usability testing:
 
 ## View the clickable prototype
 
-- **Online:** GitHub Pages link (added once Pages is enabled).
+- **Online:** https://andingaling.github.io/valtra-prototypes/
 - **Locally:** download the repo and open `docs/index.html` in any browser. No install or internet needed (without internet the text falls back to a system font).
 
 The screens are 1280 × 800 and scale to fit the window. Every page starts fresh, like a new screen on the tractor display.
