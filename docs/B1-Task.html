@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>B1 · Task screen — request help</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}html,body{margin:0;height:100%;overflow:hidden;background:#0B0D0F}</style>
+<script src="dc-standalone.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D0F}
+a{color:#7CC4EE}a:hover{color:#B5DDF5}
+.vt{font-family:'Barlow',system-ui,sans-serif;color:#F2F4F5;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+.vt *{box-sizing:border-box}
+.stage{background:radial-gradient(ellipse 85% 75% at 50% 40%,#2A3136 0%,#171B1E 60%,#0B0D0F 100%)}
+.topbar{height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:relative;z-index:2}
+.pill{height:44px;padding:0 22px;border-radius:22px;background:#F2F4F5;color:#15191C;font-weight:600;font-size:18px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.home{width:72px;height:72px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none}
+.home:hover{background:#FFFFFF;color:#15191C}
+.helpbtn{display:inline-flex;align-items:center;gap:12px;height:64px;padding:0 22px 0 6px;border-radius:32px;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;text-decoration:none;font-weight:600;font-size:18px;white-space:nowrap}
+.helpbtn:hover{border-color:#FFFFFF;color:#FFFFFF}
+.helpq{width:48px;height:48px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;border-radius:30px;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;line-height:1;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background .15s,border-color .15s,transform .08s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:#F2F4F5;color:#15191C}
+.btn-primary:hover{background:#FFFFFF;color:#15191C}
+.panel{background:rgba(18,22,25,.88);border:1px solid #3A444A;border-radius:20px}
+.sim{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1.5px dashed #F2C230;color:#F2C230;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB7BD}
+.muted{color:#AEB7BD}
+.meta{font-size:15px;color:#AEB7BD;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.meta:hover{color:#F2F4F5}
+.row{display:flex;flex-direction:column;gap:4px;padding:14px 0;border-bottom:1px solid #2A3236}
+.rl{font-size:16px;color:#AEB7BD}
+.rv{font-size:20px;font-weight:600;display:flex;align-items:center;gap:10px}
+.dot{width:14px;height:14px;border-radius:50%;flex:none}
+a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
+svg{display:block}
+</style>
+</helmet>
+<div class="vt stage" style="width: 1280px; height: 800px">
+
+<header class="topbar">
+<div style="display: flex; align-items: center; gap: 20px; width: 380px">
+<span style="font-size: 24px; font-weight: 500">10:15</span>
+<a class="meta" href="index.html">Prototype menu</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Cultivating · Field 3</span><span class="sim">Simulated</span></div>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
+<a class="helpbtn" href="B2-Confirm.html"><span class="helpq" aria-hidden="true">?</span>Help</a>
+<a class="home" href="B1-Task.html" aria-label="Home: task screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
+</div>
+</header>
+
+<!-- Machine status (simulated) -->
+<div class="panel" style="position: absolute; left: 48px; top: 108px; width: 380px; height: 590px; padding: 22px 24px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 6px"><span class="eyebrow">Current task</span><span class="sim">Simulated</span></div>
+<div class="row"><span class="rl">Implement</span><span class="rv">Cultivator</span></div>
+<div class="row"><span class="rl">Guidance</span><span class="rv"><span class="dot" style="background: #4CC35E"></span>Active</span></div>
+<div class="row"><span class="rl">Headland function</span><span class="rv">Sequence “Field edge A”</span><span class="muted" style="font-size: 16px">Selected for this task</span></div>
+<div class="row"><span class="rl">Sequence status</span><span class="rv"><span class="dot" style="border: 2px solid #AEB7BD"></span>Not active</span></div>
+<div class="row" style="border-bottom: 0"><span class="rl">Next headland</span><span class="rv">Approaching</span></div>
+<p class="muted" style="margin: auto 0 0; font-size: 15px; line-height: 1.4">Values are simulated for testing and are not real machine readings.</p>
+</div>
+
+<!-- Field view (simulated) -->
+<div class="panel" style="position: absolute; left: 456px; top: 108px; width: 480px; height: 590px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between"><span class="eyebrow">Field view</span><span class="sim">Simulated</span></div>
+<svg width="100%" viewBox="0 0 520 440" role="img" aria-label="Top-down field view: the tractor is near the headland, where the sequence was expected to start">
+<rect x="10" y="10" width="500" height="420" rx="10" fill="#1A2023" stroke="#3A444A" stroke-width="2"/>
+<rect x="11" y="11" width="498" height="90" rx="9" fill="#232B27"/>
+<text x="30" y="42" fill="#AEB7BD" font-family="Barlow, sans-serif" font-size="16" font-weight="600" letter-spacing="1.5">HEADLAND</text>
+<path d="M80 102V428M140 102V428M320 102V428M380 102V428M440 102V428" stroke="#2F3A35" stroke-width="2"/>
+<path d="M200 428V140" stroke="#2E9BE0" stroke-width="4"/>
+<path d="M200 140V110a40 40 0 0 1 80 0v318" stroke="#2E9BE0" stroke-width="4" stroke-dasharray="10 8" fill="none"/>
+<circle cx="200" cy="110" r="22" fill="none" stroke="#F28C28" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="298" y="168" fill="#F5A55A" font-family="Barlow, sans-serif" font-size="16" font-weight="600">Sequence expected to start</text>
+<path d="M200 150l-14 30h28z" fill="#F2F4F5"/>
+</svg>
+<p class="muted" style="margin: 0; font-size: 16px">Planned path: blue line · Expected sequence start: dashed circle</p>
+</div>
+
+<!-- Help -->
+<div class="panel" style="position: absolute; left: 964px; top: 108px; width: 276px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="width: 64px; height: 64px; border-radius: 50%; background: #F2F4F5; color: #15191C; display: inline-flex; align-items: center; justify-content: center; font-size: 34px; font-weight: 700" aria-hidden="true">?</span>
+<div style="font-size: 24px; font-weight: 700; line-height: 1.2">Something not working as expected?</div>
+<p class="muted" style="margin: 0; font-size: 17px; line-height: 1.4">Get help with the task you're doing now. You decide what happens next.</p>
+<a class="btn btn-primary" href="B2-Confirm.html" style="min-height: 72px; font-size: 21px; padding: 0 20px">Help with this task</a>
+</div>
+<div style="position: absolute; left: 964px; top: 560px; width: 276px; display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.4" class="muted">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 1px"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+<span>Use help while stationary or in a safe simulation.</span>
+</div>
+
+<!-- Status strip -->
+<div style="position: absolute; left: 48px; bottom: 28px; display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 22px; border-radius: 28px; background: rgba(12,14,16,.72); border: 1px solid #3A444A; font-size: 17px">
+<span style="width: 12px; height: 12px; border-radius: 50%; background: #4CC35E"></span>
+<span>Working · Field 3, pass 14</span>
+<span class="sim">Simulated</span>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

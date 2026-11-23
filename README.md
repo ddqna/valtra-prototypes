@@ -8,6 +8,13 @@ Two exploratory, clickable research prototypes for usability testing:
 
 > Research prototype only. All machine data, training content and checks are **simulated or placeholders**. This is **not official Valtra functionality** and is not connected to any machine.
 
+## View the clickable prototype
+
+- **Online:** GitHub Pages link (added once Pages is enabled).
+- **Locally:** download the repo and open `docs/index.html` in any browser. No install or internet needed (without internet the text falls back to a system font).
+
+The screens are 1280 × 800 and scale to fit the window. Every page starts fresh, like a new screen on the tractor display.
+
 ## Files
 
 | File | Screen |
@@ -24,7 +31,22 @@ Two exploratory, clickable research prototypes for usability testing:
 | `prototypes/B4-Resolve.dc.html` | B4 · Resolved / further help |
 | `prototypes/canvas.json` | Canvas layout and design notes |
 
-The `.dc.html` files are Claude Design canvas sources (1280 × 800 landscape). They run inside the Claude Design canvas, not as standalone web pages.
+The `.dc.html` files in `prototypes/` are the editable sources (Claude Design canvas format, 1280 × 800 landscape).
+
+| Folder | What it is |
+|---|---|
+| `prototypes/` | Editable screen sources — change things here |
+| `docs/` | Generated standalone site (served by GitHub Pages) — don't edit by hand |
+| `tools/dc-standalone.js` | Small runtime that renders the sources in a plain browser |
+| `tools/build_standalone.py` | Rebuilds `docs/` from `prototypes/` |
+| `tools/test_flows.py` | Clicks through both flows in a headless browser (42 checks) |
+
+After editing a source file:
+
+```bash
+python3 tools/build_standalone.py      # regenerate docs/
+python3 tools/test_flows.py            # optional: check both flows still work (needs Playwright)
+```
 
 ## Editing
 
