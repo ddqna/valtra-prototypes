@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>B2 · Confirm the issue</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D0F}
+a{color:#7CC4EE}a:hover{color:#B5DDF5}
+.vt{font-family:'Barlow',system-ui,sans-serif;color:#F2F4F5;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+.vt *{box-sizing:border-box}
+.stage{background:radial-gradient(ellipse 85% 75% at 50% 40%,#2A3136 0%,#171B1E 60%,#0B0D0F 100%)}
+.topbar{height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:relative;z-index:2}
+.pill{height:44px;padding:0 22px;border-radius:22px;background:#F2F4F5;color:#15191C;font-weight:600;font-size:18px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.ring{width:64px;height:64px;border-radius:50%;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none;font-family:'Barlow',sans-serif;padding:0}
+.home{width:72px;height:72px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none}
+.home:hover{background:#FFFFFF;color:#15191C}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;border-radius:30px;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;line-height:1;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background .15s,border-color .15s,transform .08s;white-space:nowrap}
+.btn:active,.opt:active{transform:scale(.97)}
+.btn-primary{background:#F2F4F5;color:#15191C}
+.btn-primary:hover{background:#FFFFFF;color:#15191C}
+.btn-secondary{background:rgba(12,14,16,.55);color:#F2F4F5;border-color:#8A949B}
+.btn-secondary:hover{border-color:#F2F4F5;color:#F2F4F5}
+.btn-quiet{background:transparent;color:#C9D0D4;padding:0 16px}
+.btn-quiet:hover{color:#FFFFFF}
+.panel{background:rgba(18,22,25,.94);border:1px solid #3A444A;border-radius:20px}
+.sim{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1.5px dashed #F2C230;color:#F2C230;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.ph{border:1.5px dashed #6F7A81;border-radius:10px;padding:12px 16px;color:#C9D0D4;font-style:italic}
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB7BD}
+.muted{color:#AEB7BD}
+.meta{font-size:15px;color:#AEB7BD;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.meta:hover{color:#F2F4F5}
+.opt{display:flex;align-items:center;gap:16px;width:100%;min-height:64px;padding:12px 20px;border-radius:16px;border:2px solid #4A555C;background:rgba(12,14,16,.55);color:#F2F4F5;font-family:'Barlow',sans-serif;font-size:20px;font-weight:500;text-align:left;cursor:pointer;transition:border-color .15s,background .15s,transform .08s}
+.opt:hover{border-color:#AEB7BD}
+.opt-on{border-color:#2E9BE0;background:rgba(46,155,224,.16)}
+.radio{width:26px;height:26px;border-radius:50%;border:2px solid #8A949B;flex:none}
+.radio-on{border:8px solid #2E9BE0;background:#F2F4F5}
+.flow{display:flex;align-items:center;gap:8px;font-size:15px;color:#AEB7BD}
+.flow b{color:#F2F4F5;font-weight:600}
+.kv{display:flex;flex-direction:column;gap:4px}
+.kv span:first-child{font-size:15px;color:#AEB7BD}
+.kv span:last-child{font-size:19px;font-weight:600}
+a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
+svg{display:block}
+</style>
+</helmet>
+<div class="vt stage" style="width: 1280px; height: 800px">
+
+<header class="topbar">
+<div style="display: flex; align-items: center; gap: 20px; width: 380px">
+<span style="font-size: 24px; font-weight: 500">10:15</span>
+<a class="meta" href="Main.dc.html">Prototype menu</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Help · Cultivating · Field 3</span></div>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
+<a class="home" href="B1-Task.dc.html" aria-label="Back to task screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
+</div>
+</header>
+
+<div class="panel" style="position: absolute; left: 200px; top: 104px; width: 880px; height: 600px; padding: 30px 36px; display: flex; flex-direction: column; gap: 18px">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<span class="eyebrow">Help with this task</span>
+<span class="flow"><b>1 Confirm</b><span>·</span><span>2 Check</span><span>·</span><span>3 Resolve</span></span>
+</div>
+
+<sc-if value="{{ showConfirm }}" hint-placeholder-val="{{ true }}">
+<h1 style="margin: -4px 0 0; font-size: 38px; font-weight: 700; line-height: 1.1">What isn't working as expected?</h1>
+<div style="border: 2px solid #4A555C; border-radius: 18px; padding: 22px 24px; display: flex; flex-direction: column; gap: 18px; background: rgba(12,14,16,.5)">
+<div style="display: flex; gap: 18px; align-items: center">
+<span class="ring" style="border-color: #F28C28"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21V10a5 5 0 0 1 10 0v11"/><path d="M14 18l3 3 3-3"/></svg></span>
+<p style="margin: 0; font-size: 23px; line-height: 1.35; font-weight: 500">You're using a headland-management function. It did not activate as expected.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<div class="kv"><span>Function</span><span>Sequence “Field edge A”</span></div>
+<div class="kv"><span>Expected</span><span>Start at the headland</span></div>
+<div class="kv"><span>What happened</span><span>Did not start</span></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="sim">Simulated task context</span><span class="muted" style="font-size: 16px">Based on the task shown on screen, not on a diagnosis.</span></div>
+</div>
+<p style="margin: 0; font-size: 19px; color: #DCE2E5">Is this right? You can correct it.</p>
+<div style="display: flex; gap: 14px; margin-top: auto; align-items: center">
+<a class="btn btn-primary" href="B3-Checks.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Yes, that's the issue</a>
+<button class="btn btn-secondary" onClick="{{ openOther }}">Something else</button>
+<a class="btn btn-quiet" href="B1-Task.dc.html" style="margin-left: auto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to task</a>
+</div>
+</sc-if>
+
+<sc-if value="{{ showOther }}" hint-placeholder-val="{{ false }}">
+<h1 style="margin: -4px 0 0; font-size: 34px; font-weight: 700; line-height: 1.1">What's happening instead?</h1>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ issues }}" as="it" hint-placeholder-count="4">
+<button class="{{ it.cls }}" onClick="{{ it.pick }}"><span class="{{ it.radioCls }}"></span><span>{{ it.label }}</span></button>
+</sc-for>
+</div>
+<sc-if value="{{ hasPick }}" hint-placeholder-val="{{ false }}">
+<div class="ph" style="font-size: 17px; line-height: 1.4" role="status">This path isn't built in the prototype yet. [Placeholder: add a help flow for “{{ pickedLabel }}” after field research.]</div>
+</sc-if>
+<div style="display: flex; gap: 14px; margin-top: auto; align-items: center">
+<button class="btn btn-secondary" onClick="{{ closeOther }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to suggested issue</button>
+<a class="btn btn-quiet" href="B1-Task.dc.html" style="margin-left: auto">Back to task</a>
+</div>
+</sc-if>
+
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  // ===== SCENARIO — edit the "Something else" choices here (placeholders) =====
+  scenario() { return {
+    issues: [
+      "A different function isn't responding",
+      "A function started when I didn't expect it",
+      "I don't understand a message on the screen",
+      "Something else"
+    ]
+  }; }
+
+  constructor(props) { super(props); this.state = { other: false, picked: null }; }
+  renderVals() {
+    const list = this.scenario().issues;
+    const sel = this.state.picked;
+    return {
+      showConfirm: !this.state.other,
+      showOther: this.state.other,
+      openOther: () => this.setState({ other: true }),
+      closeOther: () => this.setState({ other: false, picked: null }),
+      issues: list.map((label, k) => ({
+        label,
+        cls: 'opt' + (sel === k ? ' opt-on' : ''),
+        radioCls: 'radio' + (sel === k ? ' radio-on' : ''),
+        pick: () => this.setState({ picked: k })
+      })),
+      hasPick: sel !== null,
+      pickedLabel: sel !== null ? list[sel] : ''
+    };
+  }
+}
+</script>
+</body>
+</html>

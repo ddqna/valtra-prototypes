@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A3 · Guided practice</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D0F}
+a{color:#7CC4EE}a:hover{color:#B5DDF5}
+.vt{font-family:'Barlow',system-ui,sans-serif;color:#F2F4F5;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+.vt *{box-sizing:border-box}
+.stage{background:radial-gradient(ellipse 85% 75% at 50% 40%,#2A3136 0%,#171B1E 60%,#0B0D0F 100%)}
+.topbar{height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:relative;z-index:2}
+.pill{height:44px;padding:0 22px;border-radius:22px;background:#F2F4F5;color:#15191C;font-weight:600;font-size:18px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.ring{width:64px;height:64px;border-radius:50%;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none;font-family:'Barlow',sans-serif;padding:0}
+.home{width:72px;height:72px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none}
+.home:hover{background:#FFFFFF;color:#15191C}
+.helpbtn{display:inline-flex;align-items:center;gap:12px;height:64px;padding:0 22px 0 6px;border-radius:32px;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;text-decoration:none;font-weight:600;font-size:18px;white-space:nowrap}
+.helpbtn:hover{border-color:#FFFFFF;color:#FFFFFF}
+.helpq{width:48px;height:48px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;border-radius:30px;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;line-height:1;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background .15s,border-color .15s,transform .08s;white-space:nowrap}
+.btn:active,.opt:active,.tapbtn:active{transform:scale(.97)}
+.btn-primary{background:#F2F4F5;color:#15191C}
+.btn-primary:hover{background:#FFFFFF;color:#15191C}
+.btn-secondary{background:rgba(12,14,16,.55);color:#F2F4F5;border-color:#8A949B}
+.btn-secondary:hover{border-color:#F2F4F5;color:#F2F4F5}
+.btn-quiet{background:transparent;color:#C9D0D4;padding:0 16px}
+.btn-quiet:hover{color:#FFFFFF}
+.btn-off{opacity:.38;cursor:default}
+.panel{background:rgba(18,22,25,.88);border:1px solid #3A444A;border-radius:20px}
+.sim{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1.5px dashed #F2C230;color:#F2C230;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB7BD}
+.muted{color:#AEB7BD}
+.meta{font-size:15px;color:#AEB7BD;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.meta:hover{color:#F2F4F5}
+.opt{display:flex;align-items:center;gap:16px;width:100%;min-height:64px;padding:12px 20px;border-radius:16px;border:2px solid #4A555C;background:rgba(12,14,16,.55);color:#F2F4F5;font-family:'Barlow',sans-serif;font-size:20px;font-weight:500;text-align:left;cursor:pointer;transition:border-color .15s,background .15s,transform .08s}
+.opt:hover{border-color:#AEB7BD}
+.opt-on{border-color:#2E9BE0;background:rgba(46,155,224,.16)}
+.opt-on:hover{border-color:#7CC4EE}
+.radio{width:26px;height:26px;border-radius:50%;border:2px solid #8A949B;flex:none}
+.radio-on{border:8px solid #2E9BE0;background:#F2F4F5}
+.tag-sugg{margin-left:auto;height:28px;padding:0 12px;border-radius:14px;background:#2E9BE0;color:#0B0D0F;font-size:14px;font-weight:700;letter-spacing:.04em;display:inline-flex;align-items:center;flex:none}
+.segs{display:flex;gap:6px}
+.seg{width:56px;height:8px;border-radius:4px;background:#3A444A}
+.seg-done{background:#2E9BE0}
+.seg-now{background:#F2F4F5}
+.tapbtn{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:120px;padding:12px 8px;border:2px solid transparent;border-radius:18px;background:none;color:#DCE2E5;font-family:'Barlow',sans-serif;font-size:17px;font-weight:500;cursor:pointer;transition:border-color .15s,background .15s,transform .08s}
+.tapbtn:hover{border-color:#4A555C}
+.tap-on{border-color:#2E9BE0;background:rgba(46,155,224,.16)}
+.fb{border-radius:16px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;background:rgba(12,14,16,.6)}
+a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
+svg{display:block}
+</style>
+</helmet>
+<div class="vt stage" style="width: 1280px; height: 800px">
+
+<header class="topbar">
+<div style="display: flex; align-items: center; gap: 20px; width: 380px">
+<span style="font-size: 24px; font-weight: 500">08:45</span>
+<a class="meta" href="Main.dc.html">Prototype menu</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Guided practice · Headland sequences</span></div>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
+<a class="helpbtn" href="A1-Explore.dc.html" style="border-color: #2E9BE0"><span class="helpq" aria-hidden="true">?</span>Help &amp; learn</a>
+<a class="home" href="A0-Home.dc.html" aria-label="Home: tractor screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
+</div>
+</header>
+
+<!-- Training banner + progress -->
+<div style="position: absolute; left: 48px; right: 40px; top: 100px; height: 44px; display: flex; align-items: center; justify-content: space-between">
+<div style="display: flex; align-items: center; gap: 14px"><span class="sim">Training · Simulation</span><span class="muted" style="font-size: 17px">Nothing on the tractor changes during practice.</span></div>
+<div style="display: flex; align-items: center; gap: 14px"><span style="font-size: 18px; font-weight: 600">Step {{ stepNo }} of {{ stepCount }}</span>
+<div class="segs" aria-hidden="true"><sc-for list="{{ segs }}" as="s" hint-placeholder-count="3"><span class="{{ s.cls }}"></span></sc-for></div>
+</div>
+</div>
+
+<!-- Scenario -->
+<div class="panel" style="position: absolute; left: 48px; top: 160px; width: 470px; height: 528px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div class="eyebrow">Scenario</div>
+<p style="margin: 0; font-size: 21px; line-height: 1.4; min-height: 88px">{{ scenario }}</p>
+<svg width="100%" viewBox="0 0 520 340" role="img" aria-label="Top-down field sketch: a tractor approaches the headland at the top of the field">
+<rect x="10" y="10" width="500" height="320" rx="10" fill="#1A2023" stroke="#3A444A" stroke-width="2"/>
+<rect x="11" y="11" width="498" height="80" rx="9" fill="#232B27"/>
+<text x="30" y="40" fill="#AEB7BD" font-family="Barlow, sans-serif" font-size="15" font-weight="600" letter-spacing="1.5">HEADLAND</text>
+<path d="M80 92V328M140 92V328M320 92V328M380 92V328M440 92V328" stroke="#2F3A35" stroke-width="2"/>
+<path d="M200 328V100" stroke="#2E9BE0" stroke-width="4"/>
+<path d="M200 100a40 40 0 0 1 80 0v228" stroke="#2E9BE0" stroke-width="4" stroke-dasharray="10 8" fill="none"/>
+<circle cx="240" cy="72" r="34" fill="none" stroke="#F28C28" stroke-width="3" stroke-dasharray="6 6"/>
+<path d="M200 166l-13 28h26z" fill="#F2F4F5"/>
+</svg>
+</div>
+
+<!-- Question + interaction -->
+<div class="panel" style="position: absolute; left: 546px; top: 160px; width: 694px; height: 528px; padding: 24px 26px; display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow">Your choice</div>
+<h1 style="margin: -4px 0 0; font-size: 27px; font-weight: 600; line-height: 1.25">{{ question }}</h1>
+
+<sc-if value="{{ isChoice }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ options }}" as="o" hint-placeholder-count="3">
+<button class="{{ o.cls }}" onClick="{{ o.pick }}"><span class="{{ o.radioCls }}"></span><span>{{ o.label }}</span><sc-if value="{{ o.showSuggested }}" hint-placeholder-val="{{ false }}"><span class="tag-sugg">SUGGESTED</span></sc-if></button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ isTap }}" hint-placeholder-val="{{ false }}">
+<div style="border-radius: 18px; border: 1px solid #3A444A; background: #101315; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span class="eyebrow" style="font-size: 13px">Simplified screen preview</span><span class="sim" style="height: 26px; font-size: 12px">Not the real layout</span></div>
+<!-- Tap targets: ids must match SCENARIO.steps[2].options ids -->
+<div style="display: flex; justify-content: space-around">
+<button class="{{ tapCls.hitch }}" onClick="{{ tapPick.hitch }}"><span class="ring" style="border-color: #2E9BE0"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16M8 19V9l4-4 4 4v10"/><circle cx="12" cy="12" r="2"/></svg></span>Hitch</button>
+<button class="{{ tapCls.pto }}" onClick="{{ tapPick.pto }}"><span class="ring" style="border-color: #4CC35E"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 12h6M15 12h6M12 3v3M12 18v3"/></svg></span>PTO</button>
+<button class="{{ tapCls.headland }}" onClick="{{ tapPick.headland }}"><span class="ring" style="border-color: #F28C28"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21V10a5 5 0 0 1 10 0v11"/><path d="M14 18l3 3 3-3"/></svg></span>Headland</button>
+<button class="{{ tapCls.hydraulics }}" onClick="{{ tapPick.hydraulics }}"><span class="ring" style="border-color: #E8C547"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6v8H9zM12 11v10M8 21h8"/></svg></span>Hydraulics</button>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ fbGood }}" hint-placeholder-val="{{ false }}">
+<div class="fb" style="border: 2px solid #2E9BE0" role="status">
+<span style="width: 36px; height: 36px; border-radius: 50%; background: #2E9BE0; color: #0B0D0F; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+<div style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 18px">Suggested answer</b><span style="font-size: 18px; line-height: 1.4; color: #DCE2E5">{{ fbText }}</span></div>
+</div>
+</sc-if>
+<sc-if value="{{ fbOther }}" hint-placeholder-val="{{ false }}">
+<div class="fb" style="border: 2px solid #6F7A81" role="status">
+<span style="width: 36px; height: 36px; border-radius: 50%; border: 2px solid #AEB7BD; color: #DCE2E5; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 11v6M12 7.5v.5"/></svg></span>
+<div style="display: flex; flex-direction: column; gap: 4px"><b style="font-size: 18px">Another possibility — suggested: {{ suggestedLabel }}</b><span style="font-size: 18px; line-height: 1.4; color: #DCE2E5">{{ fbText }}</span></div>
+</div>
+</sc-if>
+</div>
+
+<!-- Bottom actions -->
+<div style="position: absolute; left: 48px; bottom: 28px; display: flex; gap: 12px">
+<a class="btn btn-secondary" href="A2-Learn.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Exit practice</a>
+<sc-if value="{{ showPrev }}" hint-placeholder-val="{{ false }}"><button class="btn btn-quiet" onClick="{{ prev }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Previous step</button></sc-if>
+</div>
+<div style="position: absolute; right: 40px; bottom: 28px; display: flex; gap: 12px; align-items: center">
+<sc-if value="{{ showSkip }}" hint-placeholder-val="{{ true }}"><button class="btn btn-quiet" onClick="{{ next }}">Skip step</button></sc-if>
+<sc-if value="{{ showSkipFinish }}" hint-placeholder-val="{{ false }}"><a class="btn btn-quiet" href="A4-Complete.dc.html">Skip &amp; finish</a></sc-if>
+<sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}"><button class="btn btn-primary btn-off" disabled="{{ true }}" aria-disabled="true">Continue<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></sc-if>
+<sc-if value="{{ canNext }}" hint-placeholder-val="{{ false }}"><button class="btn btn-primary" onClick="{{ next }}">Continue<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></sc-if>
+<sc-if value="{{ canFinish }}" hint-placeholder-val="{{ false }}"><a class="btn btn-primary" href="A4-Complete.dc.html">Finish practice<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></sc-if>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+// ===== SCENARIO — edit practice content here (all simulated / illustrative) =====
+// kind "choice" = list of options; kind "tap" = simplified screen preview.
+// For the "tap" step, option ids must match the tap buttons in the markup: hitch, pto, headland, hydraulics.
+class Component extends DCLogic {
+  scenario() { return {
+  steps: [
+    {
+      kind: "choice",
+      scenario: "You're preparing to cultivate Field 3. The same steps will repeat at every headland.",
+      question: "Which function would you explore to manage a repeatable sequence?",
+      options: [
+        { label: "Headland sequence", suggested: true, feedback: "A headland sequence is meant for repeating a set of actions at each headland." },
+        { label: "Guidance line setup", feedback: "Guidance helps you follow a line across the field. On its own it doesn't group repeated headland actions." },
+        { label: "Implement settings", feedback: "Implement settings matter, but they don't group the repeated headland steps into one sequence." }
+      ]
+    },
+    {
+      kind: "choice",
+      scenario: "A sequence was set up last week for a different implement. Today you're using the cultivator.",
+      question: "Before using that sequence today, what would you do first?",
+      options: [
+        { label: "Review the recorded steps for today's implement", suggested: true, feedback: "Checking that the steps fit today's implement is a good habit. The operator manual describes the exact procedure." },
+        { label: "Start it straight away — it worked last week", feedback: "It might still work, but a different implement may need different steps. Reviewing first is the suggested habit." },
+        { label: "Skip the sequence and do every step by hand", feedback: "That's always your choice. In this practice, the suggestion is to review the sequence so it can still help you." }
+      ]
+    },
+    {
+      kind: "tap",
+      scenario: "Now practise finding it. On the right is a simplified screen — not the real SmartTouch layout.",
+      question: "Tap where you would open headland sequences.",
+      options: [
+        { id: "hitch", label: "Hitch", feedback: "Hitch controls are for raising and lowering the implement. Look for the turn-around symbol." },
+        { id: "pto", label: "PTO", feedback: "PTO drives the implement. Headland functions are elsewhere in this preview." },
+        { id: "headland", label: "Headland", suggested: true, feedback: "In this preview, headland functions are grouped under Headland. On a real tractor the location may differ — [verify in SmartTouch documentation]." },
+        { id: "hydraulics", label: "Hydraulics", feedback: "Hydraulic controls are separate. Look for the turn-around symbol." }
+      ]
+    }
+  ]
+  }; }
+
+  constructor(props) { super(props); this.state = { step: 0, answers: {} }; }
+  renderVals() {
+    const steps = this.scenario().steps;
+    const i = this.state.step;
+    const st = steps[i];
+    const sel = this.state.answers[i];
+    const answered = sel !== undefined && sel !== null;
+    const choose = (k) => () => this.setState({ answers: Object.assign({}, this.state.answers, { [i]: k }) });
+    const options = st.options.map((o, k) => ({
+      label: o.label,
+      pick: choose(k),
+      cls: 'opt' + (sel === k ? ' opt-on' : ''),
+      radioCls: 'radio' + (sel === k ? ' radio-on' : ''),
+      showSuggested: answered && !!o.suggested
+    }));
+    const tapCls = {}, tapPick = {};
+    if (st.kind === 'tap') st.options.forEach((o, k) => { tapCls[o.id] = 'tapbtn' + (sel === k ? ' tap-on' : ''); tapPick[o.id] = choose(k); });
+    const fb = answered ? st.options[sel] : null;
+    const sugg = st.options.find((o) => o.suggested);
+    const isLast = i === steps.length - 1;
+    return {
+      stepNo: i + 1, stepCount: steps.length,
+      scenario: st.scenario, question: st.question,
+      isChoice: st.kind === 'choice', isTap: st.kind === 'tap',
+      options, tapCls, tapPick,
+      fbGood: answered && !!fb.suggested,
+      fbOther: answered && !fb.suggested,
+      fbText: fb ? fb.feedback : '',
+      suggestedLabel: sugg ? sugg.label : '',
+      segs: steps.map((s, k) => ({ cls: 'seg' + (k < i ? ' seg-done' : k === i ? ' seg-now' : '') })),
+      notAnswered: !answered, canNext: answered && !isLast, canFinish: answered && isLast,
+      showSkip: !isLast, showSkipFinish: isLast, showPrev: i > 0,
+      next: () => this.setState({ step: Math.min(i + 1, steps.length - 1) }),
+      prev: () => this.setState({ step: Math.max(i - 1, 0) })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A4 · Practice completed</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D0F}
+a{color:#7CC4EE}a:hover{color:#B5DDF5}
+.vt{font-family:'Barlow',system-ui,sans-serif;color:#F2F4F5;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+.vt *{box-sizing:border-box}
+.stage{background:radial-gradient(ellipse 85% 75% at 50% 40%,#2A3136 0%,#171B1E 60%,#0B0D0F 100%)}
+.topbar{height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:relative;z-index:2}
+.pill{height:44px;padding:0 22px;border-radius:22px;background:#F2F4F5;color:#15191C;font-weight:600;font-size:18px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.home{width:72px;height:72px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none}
+.home:hover{background:#FFFFFF;color:#15191C}
+.helpbtn{display:inline-flex;align-items:center;gap:12px;height:64px;padding:0 22px 0 6px;border-radius:32px;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;text-decoration:none;font-weight:600;font-size:18px;white-space:nowrap}
+.helpbtn:hover{border-color:#FFFFFF;color:#FFFFFF}
+.helpq{width:48px;height:48px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;border-radius:30px;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;line-height:1;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background .15s,border-color .15s,transform .08s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:#F2F4F5;color:#15191C}
+.btn-primary:hover{background:#FFFFFF;color:#15191C}
+.btn-secondary{background:rgba(12,14,16,.55);color:#F2F4F5;border-color:#8A949B}
+.btn-secondary:hover{border-color:#F2F4F5;color:#F2F4F5}
+.btn-quiet{background:transparent;color:#C9D0D4;padding:0 16px}
+.btn-quiet:hover{color:#FFFFFF}
+.panel{background:rgba(18,22,25,.88);border:1px solid #3A444A;border-radius:20px}
+.sim{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1.5px dashed #F2C230;color:#F2C230;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB7BD}
+.muted{color:#AEB7BD}
+.meta{font-size:15px;color:#AEB7BD;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.meta:hover{color:#F2F4F5}
+.li{display:flex;gap:10px;font-size:19px;line-height:1.35}
+.li:before{content:"";width:8px;height:8px;border-radius:50%;background:#2E9BE0;margin-top:9px;flex:none}
+.toggle{display:flex;align-items:center;gap:16px;min-height:64px;padding:8px 14px 8px 8px;border-radius:32px;border:2px solid #4A555C;background:rgba(12,14,16,.55);color:#F2F4F5;font-family:'Barlow',sans-serif;font-size:18px;font-weight:500;text-align:left;cursor:pointer}
+.toggle:hover{border-color:#AEB7BD}
+.sw{width:64px;height:36px;border-radius:18px;background:#3A444A;position:relative;flex:none;transition:background .15s}
+.sw:after{content:"";position:absolute;top:4px;left:4px;width:28px;height:28px;border-radius:50%;background:#AEB7BD;transition:left .15s,background .15s}
+.sw-on{background:#2E9BE0}
+.sw-on:after{left:32px;background:#FFFFFF}
+a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
+svg{display:block}
+</style>
+</helmet>
+<div class="vt stage" style="width: 1280px; height: 800px">
+
+<header class="topbar">
+<div style="display: flex; align-items: center; gap: 20px; width: 380px">
+<span style="font-size: 24px; font-weight: 500">08:47</span>
+<a class="meta" href="Main.dc.html">Prototype menu</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Guided practice · Complete</span></div>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
+<a class="helpbtn" href="A1-Explore.dc.html" style="border-color: #2E9BE0"><span class="helpq" aria-hidden="true">?</span>Help &amp; learn</a>
+<a class="home" href="A0-Home.dc.html" aria-label="Home: tractor screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
+</div>
+</header>
+
+<!-- Headline -->
+<div style="position: absolute; left: 48px; top: 112px; width: 1060px; display: flex; gap: 28px; align-items: flex-start">
+<span style="width: 88px; height: 88px; border-radius: 50%; border: 3px solid #2E9BE0; color: #7CC4EE; display: inline-flex; align-items: center; justify-content: center; flex: none"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+<div>
+<div class="eyebrow">Practice completed</div>
+<h1 style="margin: 6px 0 0; font-size: 40px; font-weight: 700; line-height: 1.12">You've completed a guided introduction to headland sequences.</h1>
+<p class="muted" style="margin: 10px 0 0; font-size: 19px">Practice is recorded on this display. It doesn't confirm real-world proficiency.</p>
+</div>
+</div>
+
+<!-- Recap -->
+<div style="position: absolute; left: 48px; right: 40px; top: 300px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<div class="panel" style="padding: 22px; display: flex; flex-direction: column; gap: 10px; height: 232px">
+<div class="eyebrow">Capability explored</div>
+<div style="font-size: 26px; font-weight: 700; line-height: 1.15">Headland sequences</div>
+<div class="muted" style="font-size: 18px">Skill area: Headland management</div>
+</div>
+<div class="panel" style="padding: 22px; display: flex; flex-direction: column; gap: 10px; height: 232px">
+<div class="eyebrow">What you practised</div>
+<div class="li">Choosing the function for a repeated task</div>
+<div class="li">Reviewing a sequence before use</div>
+<div class="li">Finding it on a simplified screen</div>
+</div>
+<div class="panel" style="padding: 22px; display: flex; flex-direction: column; gap: 10px; height: 232px; border-color: #2E9BE0">
+<div class="eyebrow" style="color: #7CC4EE">Key point</div>
+<p style="margin: 0; font-size: 20px; line-height: 1.4">A sequence repeats steps you've set up. Check they fit today's implement, and use the operator manual for the exact setup.</p>
+</div>
+</div>
+
+<!-- Progress update + reminder -->
+<div style="position: absolute; left: 48px; right: 40px; top: 556px; display: flex; gap: 20px; align-items: stretch">
+<div class="panel" style="flex: 1 1 0; padding: 14px 22px; display: flex; align-items: center; gap: 16px; font-size: 18px">
+<span class="eyebrow">Skill Tree</span>
+<span style="font-weight: 600">Headland management</span>
+<span style="display: inline-flex; align-items: center; gap: 8px" class="muted"><span style="width: 14px; height: 14px; border-radius: 50%; border: 2px dashed #8A949B"></span>Not explored</span>
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#AEB7BD" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 14px; height: 14px; border-radius: 50%; background: #F28C28"></span>Learning</span>
+</div>
+<button class="toggle" onClick="{{ toggleRemind }}" aria-pressed="{{ remindPressed }}"><span class="{{ swCls }}"></span><span>Remind me next time I open headland settings</span><span class="sim" style="height: 26px; font-size: 12px">Simulated</span></button>
+</div>
+
+<!-- Actions -->
+<a class="btn btn-quiet" href="A2-Learn.dc.html" style="position: absolute; left: 32px; bottom: 28px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg>Review instructions</a>
+<div style="position: absolute; right: 40px; bottom: 28px; display: flex; gap: 14px">
+<a class="btn btn-secondary" href="A1-Explore.dc.html">Explore more skills</a>
+<a class="btn btn-primary" href="A0-Home.dc.html" style="min-width: 240px">Return to task<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { remind: false }; }
+  renderVals() {
+    return {
+      swCls: 'sw' + (this.state.remind ? ' sw-on' : ''),
+      remindPressed: this.state.remind ? 'true' : 'false',
+      toggleRemind: () => this.setState({ remind: !this.state.remind })
+    };
+  }
+}
+</script>
+</body>
+</html>
