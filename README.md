@@ -17,10 +17,10 @@ Screens are 1280 × 800 and scale to fit the window. Every page starts fresh, li
 
 | Version | What it is | Where |
 |---|---|---|
-| **v2** (current) | Skill Tree only, entered from Help mode on the tractor screen | `main` branch · tag `v2-skill-tree-help` · site root |
-| **v1** | Two separate prototypes: Skill Tree, and Explain & Recover | tag `v1-two-prototypes` (full source as it was) · `archive/v1-two-prototypes/` · site `/v1/` |
+| **v2** (current) | Skill Tree only, entered from Help mode on the tractor screen | `main` branch · site root |
+| **v1** | Two separate prototypes: Skill Tree, and Explain & Recover | branch `v1-two-prototypes` (full source as it was) · `archive/v1-two-prototypes/` · site `/v1/` |
 
-To see v1's source on GitHub, switch the branch/tag menu to `v1-two-prototypes`.
+To see v1's source on GitHub, switch the branch menu to `v1-two-prototypes`. Treat that branch as read-only.
 
 ## The demo flow (v2)
 
