@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Skill Tree · Learning path: Headland sequences</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#0B0D0F}
+a{color:#7CC4EE}a:hover{color:#B5DDF5}
+.vt{font-family:'Barlow',system-ui,sans-serif;color:#F2F4F5;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+.vt *{box-sizing:border-box}
+.stage{background:radial-gradient(ellipse 85% 75% at 50% 40%,#2A3136 0%,#171B1E 60%,#0B0D0F 100%)}
+.topbar{height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;position:relative;z-index:2}
+.pill{height:44px;padding:0 22px;border-radius:22px;background:#F2F4F5;color:#15191C;font-weight:600;font-size:18px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.home{width:72px;height:72px;border-radius:50%;background:#F2F4F5;color:#15191C;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none}
+.home:hover{background:#FFFFFF;color:#15191C}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;border-radius:30px;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;line-height:1;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background .15s,border-color .15s,transform .08s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:#F2F4F5;color:#15191C}
+.btn-primary:hover{background:#FFFFFF;color:#15191C}
+.btn-secondary{background:rgba(12,14,16,.55);color:#F2F4F5;border-color:#8A949B}
+.btn-secondary:hover{border-color:#F2F4F5;color:#F2F4F5}
+.btn-quiet{background:transparent;color:#C9D0D4;padding:0 16px}
+.btn-quiet:hover{color:#FFFFFF}
+.panel{background:rgba(18,22,25,.88);border:1px solid #3A444A;border-radius:20px}
+.sim{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1.5px dashed #F2C230;color:#F2C230;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.eyebrow{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB7BD}
+.muted{color:#AEB7BD}
+.meta{font-size:15px;color:#AEB7BD;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.meta:hover{color:#F2F4F5}
+.step{display:flex;flex-direction:column;gap:12px;padding:24px;height:310px}
+.num{width:56px;height:56px;border-radius:50%;border:2px solid #DCE2E5;display:inline-flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;flex:none}
+.seg{width:18px;height:6px;border-radius:3px;background:#3A444A}
+.nudge{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(46,155,224,0)}50%{box-shadow:0 0 0 9px rgba(46,155,224,.55)}}
+@media (prefers-reduced-motion: reduce){.nudge{animation:none;box-shadow:0 0 0 5px rgba(46,155,224,.7)}}
+a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
+svg{display:block}
+</style>
+</helmet>
+<div class="vt stage" style="width: 1280px; height: 800px">
+
+<header class="topbar">
+<div style="display: flex; align-items: center; gap: 20px; width: 380px">
+<span style="font-size: 24px; font-weight: 500">08:43</span>
+<a class="meta" href="Main.dc.html">Prototype menu</a>
+</div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Skill Tree · Learning path</span></div>
+<div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
+<a class="home" href="A0-Home.dc.html" aria-label="Home: tractor screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"></path></svg></a>
+</div>
+</header>
+
+<!-- Heading -->
+<div style="position: absolute; left: 48px; top: 104px; width: 840px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 14px">
+<span class="eyebrow">Skill Tree › Headland management</span>
+<span style="height: 30px; padding: 0 12px; border-radius: 15px; border: 1.5px solid #2E9BE0; color: #7CC4EE; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21V10a5 5 0 0 1 10 0v11"></path><path d="M14 18l3 3 3-3"></path></svg>Opened from Help · Headland</span>
+</div>
+<h1 style="margin: 0; font-size: 46px; font-weight: 700; line-height: 1.05">Headland Sequences</h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.4; color: #DCE2E5">A short learning path built around the task: understand it, practise safely while stationary, then apply it during real work.</p>
+</div>
+
+<!-- Why now -->
+<div class="panel" style="position: absolute; left: 920px; top: 104px; width: 320px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
+<div class="eyebrow">Why now</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.4">Today's task includes repeated headland turns.</p>
+<span class="sim" style="align-self: flex-start">Based on simulated task</span>
+<div style="display: flex; align-items: center; justify-content: space-between; font-size: 16px; color: #DCE2E5; margin-top: 4px">
+<span style="display: inline-flex; align-items: center; gap: 8px"><span style="width: 14px; height: 14px; border-radius: 50%; border: 2px dashed #8A949B"></span>Not explored</span>
+<span style="display: flex; gap: 4px" aria-label="0 of 3 steps"><span class="seg"></span><span class="seg"></span><span class="seg"></span></span>
+</div>
+</div>
+
+<!-- Learning path: three steps -->
+<div style="position: absolute; left: 48px; top: 300px; width: 1192px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px">
+
+<div class="panel step" style="border: 2px solid #2E9BE0">
+<div style="display: flex; align-items: center; gap: 14px"><span class="num" style="border-color: #2E9BE0; color: #7CC4EE">1</span><div><div class="eyebrow">Step 1</div><div style="font-size: 26px; font-weight: 700">Understand</div></div></div>
+<p style="margin: 0; font-size: 18px; line-height: 1.4; color: #DCE2E5">What a headland sequence does and when it helps.</p>
+<span class="muted" style="font-size: 16px">About 1 min · Read and look</span>
+<a class="btn btn-primary {{ hint }}" href="A2-Learn.dc.html" style="margin-top: auto; align-self: flex-start">Start<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+<div class="panel step">
+<div style="display: flex; align-items: center; gap: 14px"><span class="num">2</span><div><div class="eyebrow">Step 2</div><div style="font-size: 26px; font-weight: 700">Practise</div></div></div>
+<p style="margin: 0; font-size: 18px; line-height: 1.4; color: #DCE2E5">A guided simulation. Use it while stationary; nothing on the tractor changes.</p>
+<span class="muted" style="font-size: 16px">About 2 min · Stationary only</span>
+<a class="btn btn-secondary" href="A3-Practice.dc.html" style="margin-top: auto; align-self: flex-start; min-height: 56px; font-size: 18px">Go to practice</a>
+</div>
+
+<div class="panel step">
+<div style="display: flex; align-items: center; gap: 14px"><span class="num">3</span><div><div class="eyebrow">Step 3</div><div style="font-size: 26px; font-weight: 700">Apply at work</div></div></div>
+<p style="margin: 0; font-size: 18px; line-height: 1.4; color: #DCE2E5">Use it at your next headland. You can ask for a short reminder when you open headland settings.</p>
+<span class="muted" style="font-size: 16px">During real work</span>
+<span class="muted" style="margin-top: auto; font-size: 16px; min-height: 56px; display: flex; align-items: center">Comes after practice</span>
+</div>
+</div>
+
+<!-- Connectors between steps -->
+<svg width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="#6F7A81" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; left: 419px; top: 443px"><path d="M6 12h26M25 5l7 7-7 7"></path></svg>
+<svg width="40" height="24" viewBox="0 0 40 24" fill="none" stroke="#6F7A81" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; left: 829px; top: 443px"><path d="M6 12h26M25 5l7 7-7 7"></path></svg>
+
+<!-- Bottom actions -->
+<div style="position: absolute; left: 48px; bottom: 28px; display: flex; gap: 12px">
+<a class="btn btn-secondary" href="A0-Home.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>Back to tractor</a>
+<a class="btn btn-quiet" href="A1-Explore.dc.html">See all skills</a>
+</div>
+<span class="muted" style="position: absolute; right: 40px; bottom: 46px; font-size: 16px">Progress is recorded on this display only. Not a certification.</span>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showHints":{"editor":"boolean","default":true,"section":"Demo"},"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const hints = this.props.showHints ?? true;
+    return { hint: hints ? 'nudge' : '' };
+  }
+}
+</script>
+</body>
+</html>

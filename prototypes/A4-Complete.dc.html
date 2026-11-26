@@ -46,6 +46,9 @@ a{color:#7CC4EE}a:hover{color:#B5DDF5}
 .sw-on:after{left:32px;background:#FFFFFF}
 a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
 svg{display:block}
+.nudge{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(46,155,224,0)}50%{box-shadow:0 0 0 9px rgba(46,155,224,.55)}}
+@media (prefers-reduced-motion: reduce){.nudge{animation:none;box-shadow:0 0 0 5px rgba(46,155,224,.7)}}
 </style>
 </helmet>
 <div class="vt stage" style="width: 1280px; height: 800px">
@@ -55,7 +58,7 @@ svg{display:block}
 <span style="font-size: 24px; font-weight: 500">08:47</span>
 <a class="meta" href="Main.dc.html">Prototype menu</a>
 </div>
-<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Guided practice · Complete</span></div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Learning path · 3 Apply at work</span></div>
 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
 <a class="helpbtn" href="A1-Explore.dc.html" style="border-color: #2E9BE0"><span class="helpq" aria-hidden="true">?</span>Help &amp; learn</a>
 <a class="home" href="A0-Home.dc.html" aria-label="Home: tractor screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
@@ -107,16 +110,17 @@ svg{display:block}
 <a class="btn btn-quiet" href="A2-Learn.dc.html" style="position: absolute; left: 32px; bottom: 28px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h6a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H3zM21 5h-6a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h7z"/></svg>Review instructions</a>
 <div style="position: absolute; right: 40px; bottom: 28px; display: flex; gap: 14px">
 <a class="btn btn-secondary" href="A1-Explore.dc.html">Explore more skills</a>
-<a class="btn btn-primary" href="A0-Home.dc.html" style="min-width: 240px">Return to task<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-primary {{ hint }}" href="A0-Home.dc.html" style="min-width: 240px">Return to task<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showHints":{"editor":"boolean","default":true,"section":"Demo"},"$preview":{"width":1280,"height":800}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { remind: false }; }
   renderVals() {
     return {
+      hint: (this.props.showHints ?? true) ? 'nudge' : '',
       swCls: 'sw' + (this.state.remind ? ' sw-on' : ''),
       remindPressed: this.state.remind ? 'true' : 'false',
       toggleRemind: () => this.setState({ remind: !this.state.remind })

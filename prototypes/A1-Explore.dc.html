@@ -49,6 +49,9 @@ a{color:#7CC4EE}a:hover{color:#B5DDF5}
 .toast{position:absolute;left:50%;bottom:110px;transform:translateX(-50%);display:flex;align-items:center;gap:18px;padding:10px 10px 10px 26px;border-radius:34px;background:#F2F4F5;color:#15191C;font-size:18px;font-weight:500;box-shadow:0 10px 30px rgba(0,0,0,.55);white-space:nowrap;z-index:5}
 a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
 svg{display:block}
+.nudge{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(46,155,224,0)}50%{box-shadow:0 0 0 9px rgba(46,155,224,.55)}}
+@media (prefers-reduced-motion: reduce){.nudge{animation:none;box-shadow:0 0 0 5px rgba(46,155,224,.7)}}
 </style>
 </helmet>
 <div class="vt stage" style="width: 1280px; height: 800px">
@@ -95,7 +98,7 @@ svg{display:block}
 <span class="nfoot"><span class="st"><span class="dot" style="background: #F28C28"></span>Learning</span><span class="segs" aria-label="1 of 4 activities"><span class="seg" style="background: #F28C28"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></span></span>
 </button>
 
-<a class="node node-sel" href="A2-Learn.dc.html" style="left: 600px; top: 20px">
+<a class="node node-sel {{ hint }}" href="A2-Learn.dc.html" style="left: 600px; top: 20px">
 <span style="position: absolute; top: -15px; right: 14px; height: 28px; padding: 0 12px; border-radius: 14px; background: #2E9BE0; color: #0B0D0F; font-size: 14px; font-weight: 700; letter-spacing: .04em; display: inline-flex; align-items: center">SUGGESTED</span>
 <span style="display: flex; align-items: center; gap: 14px"><span class="ring" style="width: 52px; height: 52px; border-color: #8A949B; border-style: dashed"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 21V10a5 5 0 0 1 10 0v11"/><path d="M14 18l3 3 3-3"/></svg></span><span class="nname">Headland management</span></span>
 <span class="nfoot"><span class="st"><span class="dot" style="border: 2px dashed #8A949B"></span>Not explored</span><span class="segs" aria-label="0 of 4 activities"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></span></span>
@@ -132,12 +135,13 @@ svg{display:block}
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showHints":{"editor":"boolean","default":true,"section":"Demo"},"$preview":{"width":1280,"height":800}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { toast: null }; }
   renderVals() {
     const say = (name) => () => this.setState({ toast: name });
     return {
+      hint: (this.props.showHints ?? true) ? 'nudge' : '',
       tap: {
         basic: say('Basic tractor operation'), guidance: say('Field guidance'),
         implement: say('Implement operation'), automation: say('Advanced automation')

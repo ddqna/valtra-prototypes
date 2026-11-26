@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Prototype launcher</title>
+<title>Skill Tree prototype · launcher</title>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@ a{color:#7CC4EE}a:hover{color:#B5DDF5}
 .vt{font-family:'Barlow',system-ui,sans-serif;color:#F2F4F5;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
 .vt *{box-sizing:border-box}
 .stage{background:radial-gradient(ellipse 85% 75% at 50% 40%,#2A3136 0%,#171B1E 60%,#0B0D0F 100%)}
-.ring{width:64px;height:64px;border-radius:50%;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;flex:none;font-family:'Barlow',sans-serif;cursor:pointer;padding:0}
+.ring{width:64px;height:64px;border-radius:50%;border:2px solid #DCE2E5;background:rgba(12,14,16,.72);color:#F2F4F5;display:inline-flex;align-items:center;justify-content:center;flex:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:60px;padding:0 30px;border-radius:30px;font-family:'Barlow',sans-serif;font-weight:600;font-size:20px;line-height:1;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background .15s,border-color .15s,transform .08s;white-space:nowrap}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:#F2F4F5;color:#15191C}
@@ -26,8 +26,12 @@ a{color:#7CC4EE}a:hover{color:#B5DDF5}
 .sim{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:15px;border:1.5px dashed #F2C230;color:#F2C230;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
 .eyebrow{font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#AEB7BD}
 .muted{color:#AEB7BD}
-.step{display:flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:20px;border:1px solid #4A555C;font-size:16px;font-weight:500;color:#DCE2E5;white-space:nowrap}
-.step b{font-weight:700;color:#F2F4F5}
+.fstep{display:flex;align-items:center;gap:16px}
+.fnum{width:44px;height:44px;border-radius:50%;border:2px solid #DCE2E5;display:inline-flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;flex:none}
+.fline{width:2px;height:18px;background:#4A555C;margin-left:21px}
+.nudge{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(46,155,224,0)}50%{box-shadow:0 0 0 9px rgba(46,155,224,.55)}}
+@media (prefers-reduced-motion: reduce){.nudge{animation:none;box-shadow:0 0 0 5px rgba(46,155,224,.7)}}
 a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
 svg{display:block}
 </style>
@@ -35,55 +39,37 @@ svg{display:block}
 <div class="vt stage" style="width: 1280px; height: 800px; box-sizing: border-box; display: flex; flex-direction: column; padding: 40px 64px 28px">
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 24px">
 <div>
-<div class="eyebrow">Aalto University × Valtra · Concept research prototypes</div>
-<h1 style="margin: 10px 0 0; font-size: 44px; font-weight: 700; line-height: 1.05">Adaptive Operator Companion</h1>
-<p class="muted" style="margin: 12px 0 0; font-size: 20px; line-height: 1.4; max-width: 780px">Two separate journeys for usability testing. Start one; each screen has a “Prototype menu” link to come back here.</p>
+<div class="eyebrow">Aalto University × Valtra · Concept research prototype</div>
+<h1 style="margin: 10px 0 0; font-size: 46px; font-weight: 700; line-height: 1.05">Skill Tree — Learn by Doing</h1>
+<p class="muted" style="margin: 12px 0 0; font-size: 20px; line-height: 1.4; max-width: 760px">Help explains what a control does. Skill Tree picks up from there: a task-based learning path, safe practice while stationary, then applying it at work.</p>
 </div>
 <span class="sim" style="margin-top: 6px">All content simulated</span>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 26px; flex-grow: 1; min-height: 0">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin-top: 28px; flex-grow: 1; min-height: 0">
 
-<div class="panel" style="padding: 26px 28px; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; gap: 18px">
-<span class="ring" style="border-color: #2E9BE0; color: #7CC4EE"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.5 12H12V5h4.5M12 12v7h4.5"/></svg></span>
-<div>
-<div class="eyebrow">Prototype A</div>
-<h2 style="margin: 2px 0 0; font-size: 30px; font-weight: 700">Skill Tree — Learn by Doing</h2>
-</div>
-</div>
-<p class="muted" style="margin: 0; font-size: 18px; line-height: 1.4">Discover a function by task, understand when it helps, practise it in a safe simulation, then return to work.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span class="step"><b>A1</b> Explore</span>
-<span class="step"><b>A2</b> Learn</span>
-<span class="step"><b>A3</b> Practise</span>
-<span class="step"><b>A4</b> Return to work</span>
-</div>
-<p style="margin: 0; font-size: 15px; line-height: 1.4; color: #C9D0D4; border-left: 0; padding: 14px 16px; border-radius: 12px; background: rgba(255,255,255,.04)"><span class="eyebrow" style="font-size: 13px">Researcher prompt</span><br>“Imagine you're preparing for a task and want to learn about a tractor function you're not familiar with. Show me how you would find and learn it.”</p>
-<div style="margin-top: auto; display: flex; gap: 14px">
-<a class="btn btn-primary" href="A0-Home.dc.html">Start from tractor screen<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-<a class="btn btn-secondary" href="A1-Explore.dc.html">Jump to A1</a>
-</div>
+<div class="panel" style="padding: 26px 28px; display: flex; flex-direction: column">
+<div class="eyebrow" style="margin-bottom: 14px">The demo flow</div>
+<div class="fstep"><span class="fnum">1</span><div><b style="font-size: 20px">Open Help</b><div class="muted" style="font-size: 16px">The tractor screen stays visible; controls pause</div></div></div>
+<div class="fline"></div>
+<div class="fstep"><span class="fnum">2</span><div><b style="font-size: 20px">Tap a control</b><div class="muted" style="font-size: 16px">Short description, More info, QR code — nothing activates</div></div></div>
+<div class="fline"></div>
+<div class="fstep"><span class="fnum" style="border-color: #2E9BE0; color: #7CC4EE">3</span><div><b style="font-size: 20px">Learn</b><div class="muted" style="font-size: 16px">Opens that control's learning path in the Skill Tree</div></div></div>
+<div class="fline"></div>
+<div class="fstep"><span class="fnum">4</span><div><b style="font-size: 20px">Understand → Practise → Apply</b><div class="muted" style="font-size: 16px">Practice is a simulation, used while stationary</div></div></div>
 </div>
 
-<div class="panel" style="padding: 26px 28px; display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; align-items: center; gap: 18px">
-<span class="ring" style="border-color: #F28C28; color: #F5A55A"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"/></svg></span>
-<div>
-<div class="eyebrow">Prototype B</div>
-<h2 style="margin: 2px 0 0; font-size: 30px; font-weight: 700">Explain &amp; Recover</h2>
+<div class="panel" style="padding: 26px 28px; display: flex; flex-direction: column; gap: 16px">
+<div class="eyebrow">Researcher prompt</div>
+<p style="margin: 0; font-size: 19px; line-height: 1.45; color: #DCE2E5">“Imagine you're preparing for a task and want to know what one of the tractor's functions does, and how to use it. Show me how you would find out.”</p>
+<div style="display: flex; gap: 12px; align-items: flex-start; font-size: 16px; line-height: 1.4" class="muted">
+<span style="width: 22px; height: 22px; border-radius: 50%; flex: none; margin-top: 1px; box-shadow: 0 0 0 4px rgba(46,155,224,.55)"></span>
+<span>A pulsing blue outline shows the next tap for demos. Turn it off per screen under Tweaks → Demo → showHints when testing with operators, so the hint doesn't steer them.</span>
 </div>
-</div>
-<p class="muted" style="margin: 0; font-size: 18px; line-height: 1.4">Ask for help in the context of the current task, confirm or correct the issue, see what to check, then resume or get more help.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 8px">
-<span class="step"><b>B1</b> Request help</span>
-<span class="step"><b>B2</b> Confirm</span>
-<span class="step"><b>B3</b> Check</span>
-<span class="step"><b>B4</b> Resolve</span>
-</div>
-<p style="margin: 0; font-size: 15px; line-height: 1.4; color: #C9D0D4; padding: 14px 16px; border-radius: 12px; background: rgba(255,255,255,.04)"><span class="eyebrow" style="font-size: 13px">Researcher prompt</span><br>“Imagine you're performing a task and a function isn't behaving as expected. Show me how you would get assistance.”</p>
-<div style="margin-top: auto; display: flex; gap: 14px">
-<a class="btn btn-primary" href="B1-Task.dc.html">Start from task screen<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<div style="margin-top: auto; display: flex; flex-wrap: wrap; gap: 12px">
+<a class="btn btn-primary {{ hint }}" href="A0-Home.dc.html">Start demo<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="btn btn-secondary" href="Path-Headland.dc.html">Jump to learning path</a>
+<a class="btn btn-secondary" href="A1-Explore.dc.html">Browse all skills</a>
 </div>
 </div>
 
@@ -91,10 +77,10 @@ svg{display:block}
 <p class="muted" style="margin: 16px 0 0; font-size: 15px">Research prototype for testing only — not official Valtra functionality and not connected to any machine. Use while stationary or in a safe simulation.</p>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showHints":{"editor":"boolean","default":true,"section":"Demo"},"$preview":{"width":1280,"height":800}}'>
 class Component extends DCLogic {
   renderVals() {
-    return {};
+    return { hint: (this.props.showHints ?? true) ? 'nudge' : '' };
   }
 }
 </script>

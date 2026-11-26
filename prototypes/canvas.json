@@ -1,24 +1,142 @@
-{"v":3,"createdOnFiles":{"v":1,"at":"2026-11-23T10:20:00Z"},"title":"Valtra Adaptive Operator Companion — Prototypes","launch":{"view":"canvas"},"pages":[],
-"boards":{
-"Main.dc.html":{"x":0,"y":0,"w":1280,"h":800,"title":"Prototype launcher","is_interactive":true},
-"A0-Home.dc.html":{"x":0,"y":1300,"w":1280,"h":800,"title":"A0 · Tractor screen (entry / return)","is_interactive":true},
-"A1-Explore.dc.html":{"x":1360,"y":1300,"w":1280,"h":800,"title":"A1 · Explore your skills","is_interactive":true},
-"A2-Learn.dc.html":{"x":2720,"y":1300,"w":1280,"h":800,"title":"A2 · Learn a capability","is_interactive":true},
-"A3-Practice.dc.html":{"x":4080,"y":1300,"w":1280,"h":800,"title":"A3 · Guided practice","is_interactive":true},
-"A4-Complete.dc.html":{"x":5440,"y":1300,"w":1280,"h":800,"title":"A4 · Practice completed","is_interactive":true},
-"B1-Task.dc.html":{"x":0,"y":2600,"w":1280,"h":800,"title":"B1 · Request help (task screen)","is_interactive":true},
-"B2-Confirm.dc.html":{"x":1360,"y":2600,"w":1280,"h":800,"title":"B2 · Confirm the issue","is_interactive":true},
-"B3-Checks.dc.html":{"x":2720,"y":2600,"w":1280,"h":800,"title":"B3 · What to check","is_interactive":true},
-"B4-Resolve.dc.html":{"x":4080,"y":2600,"w":1280,"h":800,"title":"B4 · Resolved / further help","is_interactive":true}
-},
-"order":["Main.dc.html","A0-Home.dc.html","A1-Explore.dc.html","A2-Learn.dc.html","A3-Practice.dc.html","A4-Complete.dc.html","B1-Task.dc.html","B2-Confirm.dc.html","B3-Checks.dc.html","B4-Resolve.dc.html"],
-"notes":{
-"titleA":{"x":0,"y":1000,"text":"Prototype A — Skill Tree: Learn by Doing","kind":"title1","maxW":6720},
-"titleB":{"x":0,"y":2300,"text":"Prototype B — Explain & Recover","kind":"title1","maxW":5360},
-"n1":{"x":1360,"y":0,"w":540,"fill":"blue","text":"MAIN UX DECISIONS\n\n• One visual system for both: dark studio background, white pill for context, round outlined buttons and a white Home circle, echoing SmartTouch Gen2. White filled pill = the one primary action per screen.\n• Every icon carries a text label; touch targets are 56–72 px; body text 18–22 px.\n• Skill Tree is task-first (\"What do you want to get done?\") and shows exploration progress only, never certification. No points, streaks or badges.\n• Practice shows one question at a time, always marks a 'Suggested' answer, never says 'wrong', and allows Skip / Back / Exit.\n• Explain & Recover never diagnoses: it states the simulated context, lets the operator confirm or correct it, lists checks and leaves control with the operator. Nothing is sent or changed automatically."},
-"n2":{"x":1980,"y":0,"w":540,"fill":"orange","text":"ASSUMPTIONS (no info in references)\n\n• Canvas 1280×800 (16:10, close to the reference display).\n• Barlow font as a stand-in; real SmartTouch typeface not confirmed.\n• Top bar layout (time · context pill · help · Home) inferred from screenshots.\n• Function icons are generic line icons, NOT Valtra's icon set.\n• Placement of headland functions in the simplified preview (A3 step 3) is invented for practice only.\n• Skill categories and progress states are illustrative."},
-"n3":{"x":2600,"y":0,"w":540,"fill":"teal","text":"WHERE SIMULATED CONTENT APPEARS\n\n• Yellow dashed chip = simulated data (task, machine status, field view, training feedback).\n• Grey dashed chip / dashed box = placeholder waiting for verified documentation.\n• A0 & B1: task, implement, status values.\n• A2: example use case and diagram.\n• A3: all questions and feedback ('Training · Simulation').\n• B2: issue summary. B3: all three checks and 'Why?' texts. B4: documentation and support routes."},
-"n4":{"x":3220,"y":0,"w":540,"fill":"red","text":"VERIFY BEFORE OPERATOR TESTING\n\n• Real headland-sequence behaviour, setup and terminology (Valtra docs).\n• The three troubleshooting checks in B3 and their reasons.\n• Where the function actually lives in SmartTouch (A3 step 3).\n• Correct support route (dealer / documentation) for B4 — no contacts invented.\n• Wording of training feedback in A3 with a domain expert.\n• Replace the headland scenario with the verified field incident."},
-"n5":{"x":3840,"y":0,"w":540,"fill":"green","text":"HOW TO EDIT\n\n• Headlines, labels, body text: double-click and retype on the artboard.\n• Lists (practice questions, options, feedback, issue choices, checks, support options): edit the SCENARIO block at the top of the script in A3, B2, B3 and B4 (Code view).\n• Swap scenario: change SCENARIO + the headlines in A2, A3, B1–B4.\n• Links between screens are plain <a href=\"…dc.html\">; press Play on any artboard to click through.\n• Shared styles (colours, buttons, chips) live in the same <style> block in every artboard."}
-},
-"designSystems":[]}
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "A0-Home.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "A0 · Tractor screen + Help mode",
+      "w": 1280,
+      "x": 0,
+      "y": 1300
+    },
+    "A1-Explore.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "Browse all skills · Skill Tree overview",
+      "w": 1280,
+      "x": 1360,
+      "y": 2600
+    },
+    "A2-Learn.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "Step 1 · Understand",
+      "w": 1280,
+      "x": 2720,
+      "y": 1300
+    },
+    "A3-Practice.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "Step 2 · Practise (stationary)",
+      "w": 1280,
+      "x": 4080,
+      "y": 1300
+    },
+    "A4-Complete.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "Step 3 · Apply at work",
+      "w": 1280,
+      "x": 5440,
+      "y": 1300
+    },
+    "Main.dc.html": {
+      "h": 800,
+      "is_interactive": true,
+      "title": "Launcher",
+      "w": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "Path-Headland.dc.html": {
+      "x": 1360,
+      "y": 1300,
+      "w": 1280,
+      "h": 800,
+      "title": "Learning path · opened from Help → Learn",
+      "is_interactive": true
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-23T10:20:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "noteOrder": [
+    "titleA",
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "n5",
+    "nA1"
+  ],
+  "notes": {
+    "n1": {
+      "fill": "blue",
+      "text": "MAIN UX DECISIONS\n\n• Help is the starting point: it keeps the tractor screen visible and pauses its controls. Tapping a control shows a short description, More info and a QR code (as on current SmartTouch) without activating anything.\n• 'Learn' hands over to the Skill Tree: a separate screen with that control's task-based path — Understand → Practise (stationary simulation) → Apply at work.\n• Progress shows exploration only, never certification. No points, streaks or badges.\n• Practice shows one question at a time, marks a 'Suggested' answer, never says 'wrong', and allows Skip / Back / Exit.\n• A pulsing blue outline marks the next tap for demos (Tweaks → Demo → showHints).",
+      "w": 540,
+      "x": 1360,
+      "y": 0
+    },
+    "n2": {
+      "fill": "orange",
+      "text": "ASSUMPTIONS (no info in references)\n\n• Tractor image: the team's SmartTouch crop, with its baked-in FRONT PTO help card removed and edges faded.\n• Names of the controls in the image are NOT verified (shown as 'Control A–H [name to verify]'); only Front PTO and the AUTO label come from the screenshot.\n• 'Headland' is an added prototype control (left column), not a confirmed SmartTouch icon.\n• Help card layout and QR placement are modelled on the screenshot; the QR is a placeholder.\n• Canvas 1280×800; Barlow as a stand-in typeface.",
+      "w": 540,
+      "x": 1980,
+      "y": 0
+    },
+    "n3": {
+      "fill": "teal",
+      "text": "WHERE SIMULATED CONTENT APPEARS\n\n• Yellow dashed chip = simulated data; grey dashed box = placeholder for verified documentation.\n• A0: task status, all Help texts (only Headland has an illustrative text), placeholder QR.\n• Learning path: 'Why now' task context.\n• Step 1: example use case and diagram. Step 2: all questions and feedback. Step 3: reminder toggle.",
+      "w": 540,
+      "x": 2600,
+      "y": 0
+    },
+    "n4": {
+      "fill": "red",
+      "text": "VERIFY BEFORE OPERATOR TESTING\n\n• Real names and Help texts for every control in the image (SmartTouch Help).\n• Which SmartTouch control opens headland management, and where it sits.\n• Headland-sequence behaviour, setup and terminology (Valtra docs).\n• Where the QR code should lead.\n• Wording of practice feedback with a domain expert.\n• Turn showHints off for unbiased tests.",
+      "w": 540,
+      "x": 3220,
+      "y": 0
+    },
+    "n5": {
+      "fill": "green",
+      "text": "HOW TO EDIT\n\n• Headlines and labels: double-click and retype on the artboard.\n• Help texts, names and card positions: the scenario() block at the top of the A0 script (Code view). h1–h10 are the image's controls.\n• Practice questions and feedback: scenario() in Step 2.\n• Hints: select an artboard → Tweaks → Demo → showHints.\n• Links are plain <a href=\"…dc.html\">; press Play on any artboard to click through.",
+      "w": 540,
+      "x": 3840,
+      "y": 0
+    },
+    "titleA": {
+      "kind": "title1",
+      "maxW": 6720,
+      "text": "Skill Tree — Help → Learn → Practise → Apply",
+      "w": 240,
+      "x": 0,
+      "y": 1000
+    },
+    "nA1": {
+      "x": 740,
+      "y": 2600,
+      "w": 540,
+      "fill": "gray",
+      "text": "ALSO REACHABLE: BROWSE ALL SKILLS\n\nThe full Skill Tree overview (unchanged). Opened from 'Browse all skills' in Help mode, 'See all skills' on the learning path, 'Explore more skills' after practice, and Learn on controls that have no path yet."
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "A0-Home.dc.html",
+    "Path-Headland.dc.html",
+    "A2-Learn.dc.html",
+    "A3-Practice.dc.html",
+    "A4-Complete.dc.html",
+    "A1-Explore.dc.html"
+  ],
+  "pages": [],
+  "title": "Valtra Adaptive Operator Companion — Prototypes"
+}

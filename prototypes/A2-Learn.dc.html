@@ -43,6 +43,9 @@ a{color:#7CC4EE}a:hover{color:#B5DDF5}
 .tick{width:32px;height:32px;border-radius:50%;border:2px solid #2E9BE0;color:#7CC4EE;display:inline-flex;align-items:center;justify-content:center;flex:none}
 a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
 svg{display:block}
+.nudge{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(46,155,224,0)}50%{box-shadow:0 0 0 9px rgba(46,155,224,.55)}}
+@media (prefers-reduced-motion: reduce){.nudge{animation:none;box-shadow:0 0 0 5px rgba(46,155,224,.7)}}
 </style>
 </helmet>
 <div class="vt stage" style="width: 1280px; height: 800px">
@@ -52,7 +55,7 @@ svg{display:block}
 <span style="font-size: 24px; font-weight: 500">08:44</span>
 <a class="meta" href="Main.dc.html">Prototype menu</a>
 </div>
-<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Skill Tree · Headland management</span></div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Learning path · 1 Understand</span></div>
 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
 <a class="helpbtn" href="A1-Explore.dc.html" style="border-color: #2E9BE0"><span class="helpq" aria-hidden="true">?</span>Help &amp; learn</a>
 <a class="home" href="A0-Home.dc.html" aria-label="Home: tractor screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
@@ -113,16 +116,17 @@ svg{display:block}
 
 <!-- Bottom actions -->
 <a class="btn btn-secondary" href="A1-Explore.dc.html" style="position: absolute; left: 48px; bottom: 28px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to Skill Tree</a>
-<a class="btn btn-primary" href="A3-Practice.dc.html" style="position: absolute; right: 40px; bottom: 28px">Try guided practice<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<a class="btn btn-primary {{ hint }}" href="A3-Practice.dc.html" style="position: absolute; right: 40px; bottom: 28px">Try guided practice<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 <span class="muted" style="position: absolute; right: 340px; bottom: 46px; font-size: 16px">About 2 minutes · simulation only</span>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showHints":{"editor":"boolean","default":true,"section":"Demo"},"$preview":{"width":1280,"height":800}}'>
 class Component extends DCLogic {
   constructor(props) { super(props); this.state = { more: false }; }
   renderVals() {
     return {
+      hint: (this.props.showHints ?? true) ? 'nudge' : '',
       showMore: this.state.more,
       showDiagram: !this.state.more,
       openMore: () => this.setState({ more: true }),

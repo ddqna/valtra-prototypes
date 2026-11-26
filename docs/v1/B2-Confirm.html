@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>B2 · Confirm the issue</title>
-<script src="./support.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}html,body{margin:0;height:100%;overflow:hidden;background:#0B0D0F}</style>
+<script src="dc-standalone.js"></script>
 </head>
 <body>
 <x-dc>
@@ -54,11 +56,11 @@ svg{display:block}
 <header class="topbar">
 <div style="display: flex; align-items: center; gap: 20px; width: 380px">
 <span style="font-size: 24px; font-weight: 500">10:15</span>
-<a class="meta" href="Main.dc.html">Prototype menu</a>
+<a class="meta" href="index.html">Prototype menu</a>
 </div>
 <div style="display: flex; align-items: center; gap: 12px"><span class="pill">Help · Cultivating · Field 3</span></div>
 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
-<a class="home" href="B1-Task.dc.html" aria-label="Back to task screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
+<a class="home" href="B1-Task.html" aria-label="Back to task screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
 </div>
 </header>
 
@@ -85,9 +87,9 @@ svg{display:block}
 </div>
 <p style="margin: 0; font-size: 19px; color: #DCE2E5">Is this right? You can correct it.</p>
 <div style="display: flex; gap: 14px; margin-top: auto; align-items: center">
-<a class="btn btn-primary" href="B3-Checks.dc.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Yes, that's the issue</a>
+<a class="btn btn-primary" href="B3-Checks.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Yes, that's the issue</a>
 <button class="btn btn-secondary" onClick="{{ openOther }}">Something else</button>
-<a class="btn btn-quiet" href="B1-Task.dc.html" style="margin-left: auto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to task</a>
+<a class="btn btn-quiet" href="B1-Task.html" style="margin-left: auto"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to task</a>
 </div>
 </sc-if>
 
@@ -103,7 +105,7 @@ svg{display:block}
 </sc-if>
 <div style="display: flex; gap: 14px; margin-top: auto; align-items: center">
 <button class="btn btn-secondary" onClick="{{ closeOther }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Back to suggested issue</button>
-<a class="btn btn-quiet" href="B1-Task.dc.html" style="margin-left: auto">Back to task</a>
+<a class="btn btn-quiet" href="B1-Task.html" style="margin-left: auto">Back to task</a>
 </div>
 </sc-if>
 

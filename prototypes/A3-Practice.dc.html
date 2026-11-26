@@ -55,6 +55,9 @@ a{color:#7CC4EE}a:hover{color:#B5DDF5}
 .fb{border-radius:16px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;background:rgba(12,14,16,.6)}
 a:focus-visible,button:focus-visible{outline:3px solid #2E9BE0;outline-offset:3px}
 svg{display:block}
+.nudge{animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{box-shadow:0 0 0 0 rgba(46,155,224,0)}50%{box-shadow:0 0 0 9px rgba(46,155,224,.55)}}
+@media (prefers-reduced-motion: reduce){.nudge{animation:none;box-shadow:0 0 0 5px rgba(46,155,224,.7)}}
 </style>
 </helmet>
 <div class="vt stage" style="width: 1280px; height: 800px">
@@ -64,7 +67,7 @@ svg{display:block}
 <span style="font-size: 24px; font-weight: 500">08:45</span>
 <a class="meta" href="Main.dc.html">Prototype menu</a>
 </div>
-<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Guided practice · Headland sequences</span></div>
+<div style="display: flex; align-items: center; gap: 12px"><span class="pill">Learning path · 2 Practise (stationary)</span></div>
 <div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; width: 380px">
 <a class="helpbtn" href="A1-Explore.dc.html" style="border-color: #2E9BE0"><span class="helpq" aria-hidden="true">?</span>Help &amp; learn</a>
 <a class="home" href="A0-Home.dc.html" aria-label="Home: tractor screen"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></a>
@@ -144,13 +147,13 @@ svg{display:block}
 <sc-if value="{{ showSkip }}" hint-placeholder-val="{{ true }}"><button class="btn btn-quiet" onClick="{{ next }}">Skip step</button></sc-if>
 <sc-if value="{{ showSkipFinish }}" hint-placeholder-val="{{ false }}"><a class="btn btn-quiet" href="A4-Complete.dc.html">Skip &amp; finish</a></sc-if>
 <sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}"><button class="btn btn-primary btn-off" disabled="{{ true }}" aria-disabled="true">Continue<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></sc-if>
-<sc-if value="{{ canNext }}" hint-placeholder-val="{{ false }}"><button class="btn btn-primary" onClick="{{ next }}">Continue<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></sc-if>
-<sc-if value="{{ canFinish }}" hint-placeholder-val="{{ false }}"><a class="btn btn-primary" href="A4-Complete.dc.html">Finish practice<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></sc-if>
+<sc-if value="{{ canNext }}" hint-placeholder-val="{{ false }}"><button class="btn btn-primary {{ hint }}" onClick="{{ next }}">Continue<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></sc-if>
+<sc-if value="{{ canFinish }}" hint-placeholder-val="{{ false }}"><a class="btn btn-primary {{ hint }}" href="A4-Complete.dc.html">Finish practice<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></sc-if>
 </div>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+<script type="text/x-dc" data-dc-script data-props='{"showHints":{"editor":"boolean","default":true,"section":"Demo"},"$preview":{"width":1280,"height":800}}'>
 // ===== SCENARIO — edit practice content here (all simulated / illustrative) =====
 // kind "choice" = list of options; kind "tap" = simplified screen preview.
 // For the "tap" step, option ids must match the tap buttons in the markup: hitch, pto, headland, hydraulics.
@@ -193,6 +196,7 @@ class Component extends DCLogic {
 
   constructor(props) { super(props); this.state = { step: 0, answers: {} }; }
   renderVals() {
+    const hints = this.props.showHints ?? true;
     const steps = this.scenario().steps;
     const i = this.state.step;
     const st = steps[i];
@@ -202,16 +206,17 @@ class Component extends DCLogic {
     const options = st.options.map((o, k) => ({
       label: o.label,
       pick: choose(k),
-      cls: 'opt' + (sel === k ? ' opt-on' : ''),
+      cls: 'opt' + (sel === k ? ' opt-on' : '') + (hints && !answered && o.suggested ? ' nudge' : ''),
       radioCls: 'radio' + (sel === k ? ' radio-on' : ''),
       showSuggested: answered && !!o.suggested
     }));
     const tapCls = {}, tapPick = {};
-    if (st.kind === 'tap') st.options.forEach((o, k) => { tapCls[o.id] = 'tapbtn' + (sel === k ? ' tap-on' : ''); tapPick[o.id] = choose(k); });
+    if (st.kind === 'tap') st.options.forEach((o, k) => { tapCls[o.id] = 'tapbtn' + (sel === k ? ' tap-on' : '') + (hints && !answered && o.suggested ? ' nudge' : ''); tapPick[o.id] = choose(k); });
     const fb = answered ? st.options[sel] : null;
     const sugg = st.options.find((o) => o.suggested);
     const isLast = i === steps.length - 1;
     return {
+      hint: hints ? 'nudge' : '',
       stepNo: i + 1, stepCount: steps.length,
       scenario: st.scenario, question: st.question,
       isChoice: st.kind === 'choice', isTap: st.kind === 'tap',
